@@ -22,7 +22,7 @@ const HU_DISPONIBLES: HuItem[] = [
     id: 'HU-01',
     titulo: 'HU-01 — Registrar solicitud',
     resumen: 'Crear solicitud con priorización automática',
-    estado: 'pendiente',
+    estado: 'implementada',
   },
   {
     id: 'HU-02',
