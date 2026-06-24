@@ -1,9 +1,5 @@
 import { useState, type ReactNode } from 'react'
 
-/**
- * Definición de cada historia de usuario disponible en el front.
- * Cuando agreguemos un nuevo panel, lo registramos acá.
- */
 export interface HuItem {
   id: string
   titulo: string
@@ -28,13 +24,13 @@ const HU_DISPONIBLES: HuItem[] = [
     id: 'HU-02',
     titulo: 'HU-02 — Consultar lista',
     resumen: 'Listar y filtrar solicitudes',
-    estado: 'pendiente',
+    estado: 'implementada',
   },
   {
     id: 'HU-03',
     titulo: 'HU-03 — Cambiar estado',
     resumen: 'Modificar estado de una solicitud',
-    estado: 'pendiente',
+    estado: 'implementada',
   },
   {
     id: 'HU-08',
@@ -45,17 +41,14 @@ const HU_DISPONIBLES: HuItem[] = [
 ]
 
 interface LayoutProps {
-  /** Mapa de id de HU → componente del panel correspondiente */
   paneles: Record<string, ReactNode>
 }
 
 export function Layout({ paneles }: LayoutProps) {
-  // Por default arrancamos en la primera HU implementada
   const [huActiva, setHuActiva] = useState<string>('HU-09')
 
   return (
     <div className="min-h-screen bg-slate-50 flex">
-      {/* Sidebar */}
       <aside className="w-72 bg-slate-900 text-slate-100 flex flex-col">
         <div className="px-6 py-5 border-b border-slate-700">
           <h1 className="text-xl font-bold text-white">RedNorte</h1>
@@ -99,7 +92,6 @@ export function Layout({ paneles }: LayoutProps) {
         </div>
       </aside>
 
-      {/* Contenido principal */}
       <main className="flex-1 overflow-y-auto">
         <div className="max-w-5xl mx-auto px-8 py-8">
           {paneles[huActiva] ?? (
