@@ -36,7 +36,7 @@ const HU_DISPONIBLES: HuItem[] = [
     id: 'HU-08',
     titulo: 'HU-08 — Portal paciente',
     resumen: 'Consulta pública por RUT',
-    estado: 'pendiente',
+    estado: 'implementada',
   },
 ]
 
